@@ -1,0 +1,130 @@
+body{
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    color: #555;
+    background-color: #e7436f;
+}
+body, .container{
+    margin-bottom: 60px;
+}
+/* DIV MAIN-CONTAINER */
+.main-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; 
+    padding-bottom: 120px; 
+}
+/* DIV CONTAINER */
+.container h1{
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* FORMULAIRE D'INSCRIPTION */
+form{
+    display: flex;
+    flex-direction: column;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 300px;
+}
+form h2{
+    text-decoration: underline;
+}
+
+/* Les INPUT */
+input[type="text"],
+input[type="date"],
+input[type="email"],
+input[type="password"] {
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #6fe7a9; 
+    border-radius: 4px;
+    background-color: #f2f2f2; 
+}
+/* LES RADIO GENRES */
+.radio{
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #6fe7a9;
+    border-radius: 4px;
+    display: flex;
+    justify-content: start;
+    flex-direction: column;
+}
+.radio label {
+    display: flex;
+    align-items: center;
+    margin: 5px 0;
+}
+.radio input[type="radio"] {
+    margin-right: 10px;
+}
+
+/* LES  CHECKBOXES LOISIRS */
+.loisirs {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+}
+.loisirs label{
+    display: flex;
+    margin-bottom: 5px;
+}
+input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+input[type="submit"] {
+    padding: 10px;
+    background-color: #e7d96f; 
+    color: white;
+    border: none;
+    border-radius: 4px;
+}
+input[type="submit"]:hover {
+   background-color: #d6c05d; 
+}   
+
+/* TEXTE POUR LE BOUTTON CONNECTEZ-VOUS */
+.connexion{
+    background-color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    margin-top: 20px; 
+    padding: 10px 20px 30px 20px;
+}
+
+/* LIEN DE CONNEXION SI ON A UN COMPTE */
+.connexion a{
+    font-weight: bold;
+    background-color: #6fe7a9;
+    color: #ffffff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    margin-top: 20px;
+}
+.connexion a:hover{
+    background-color: #5dc898;
+}
+
+ /* FOOTER */
+ footer{
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+ }

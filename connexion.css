@@ -1,0 +1,95 @@
+body{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: #555555;
+    background-color: #e7436f;
+}
+
+/* DIV CONTAINER */
+.container{
+    display: flex;
+    flex-direction: column;
+   align-items: center;
+}
+.container h1{
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* FORMULAIRE DE CONNEXION */
+form{
+    display: flex;
+    flex-direction: column;
+    background-color: #ffffff; 
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 300px;
+}
+form h2{
+    text-decoration: underline;
+    text-align: center;
+}
+
+/* LES INPUT */
+input[type="email"],
+input[type="password"] {
+    padding: 10px;
+    margin: 10px;
+    border: 1px solid #6fe7a9; 
+    border-radius: 4px;
+    background-color: #f2f2f2; 
+}
+
+input[type="submit"] {
+    padding: 10px;
+    background-color: #e7d96f; 
+    color: white;
+    border: none;
+    border-radius: 4px;
+}
+
+input[type="submit"]:hover {
+    background-color: #d6c05d; 
+}
+
+/* TEXTE POUR LE BOUTTON INSCRIVEZ-VOUS */
+.inscription{
+    background-color: #ffffff;
+    border: none;
+    text-align: center;
+    border-radius: 5px;
+    text-decoration: none;
+    margin-top: 20px; 
+    padding: 10px 54px 30px 54px;
+}
+
+/* LIEN D'INSCRIPTION SI ON A PAS UN COMPTE */
+.inscription a{
+    font-weight: bold;
+    background-color: #6fe7a9;
+    color: #ffffff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    margin-top: 20px;
+}
+.inscription a:hover{
+    background-color: #5dc898;
+}
+
+ /* FOOTER */
+ footer{
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+ }

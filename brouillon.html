@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brouillon</title>
+</head>
+<body>
+    <!-- BASE DES DONNÉES -->
+    <h1>Comment creer une base de données sql </h1>
+
+ <p>Premierement : sudo mysql + mot de passe</p>
+ <h4>Créer une base de données </h4>
+ <p> Dans sql : CREATE DATABASE "nom de ta base de données"</p>
+ <p> Utiliser la base de données avec USE "nom de ta base de données"</p>
+
+ <!--CREER LES TABLES SUR SQL-->
+
+<p>CREATE TABLE users(
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    firstname VARCHAR(100),
+    lastname VARCHAR(100),
+    birthdate DATE,
+    gender ENUM('male', 'female', 'other'),
+    email VARCHAR(255),
+    inscription_date DATE,
+    hobbies TEXT);
+</p>
+
+<!-- INSERER LES VALEURS (NOM, PRENOM, MAIL...)-->
+<p>
+INSERT INTO users (firstname, lastname, birthdate, gender, email, inscription_date, hobbies) VALUES
+('Lydia', 'Anas', '2000-08-15', 'female', 'lydia.anas@gmail.com', '2023-01-15', 'cuisine, musique'),
+('Luna', 'Choil', '1990-07-08', 'female', 'luna.choil@gmail.com', '2023-01-20', 'yoga, peinture'),
+('Jade', 'Durand', '2000-05-22', 'other', 'jade.durand@gmail.com', '2023-01-25', 'musique, jeux video'),
+('Dylann', 'Martin', '1988-03-16', 'male', 'dylann.martin@gmail.com', '2023-01-30', 'voyage, cuisine'),
+('Pierre', 'Joli', '1992-11-30', 'male', 'pierre.joli@gmailmail.com', '2023-02-04', 'cinéma, sport');
+</p>
+
+ <!--FAIRE LES CHECKBOX POUR LES LOISIRS-->
+ <div class="loisir">
+    <input type="checkbox" name="loisir"/>
+    <label for="loisir">loisir</label>
+
+    <input type="checkbox" name="loisir"/>
+    <label for="loisir">loisir</label>
+
+    <input type="checkbox" name="loisir"/>
+    <label for="loisir">loisir</label>
+
+    <input type="checkbox" name="loisir"/>
+    <label for="loisir">loisir</label>
+
+    <input type="checkbox" name="loisir"/>
+    <label for="loisir">loisir</label>
+  </div>
+
+
+<!-- IDEE POUR LE JAVASCRIPT   -->
+<div class="javascript">
+
+</div>
+<p>Validation de formulaire pour l'utilisateur :
+    <br> exemple : format de email invalide, ou mot de passe de securite
+</p>
+<p>La geolocalisation : obtenir la geolocalisation des utilisateur</p>
+
+<!-- Le mot de passe securiser en Javascript (ne fonctionne pas )  -->
+<div class="password">
+   <p> if (password.value.length >= 8 && 
+    /[0-9]/.test(password.value) && 
+    /[A-Z]/.test(password.value) && 
+    /[a-z]/.test(password.value) && 
+    /[^a-zA-Z\d]/.test(password.value)
+    )
+    {
+    console.log(' Mot de passe correct');
+} else {
+    errorInput("Le mot de passe doit contenir au moins 8 caractères, dont une majuscule, une minuscule et un caractère spécial", errorPassword);
+}</p>
+<!-- Mot de passe en Javascript avec le ReGex -->
+/ Récupère les données du formulaire 
+const mail = document.getElementById("mail");
+const password = document.getElementById("password");
+const errorEmail = document.getElementById("errorEmail");
+const errorPassword = document.getElementById("errorPassword");
+
+// Valide l'email
+if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(mail.value)) {
+    console.log('Email valide');
+} else {
+    errorInput("Veuillez saisir un mail valide", errorEmail);
+}
+
+// Valide le mot de passe en ReGex
+const passwordRegex = /^(?=.*\d).{8,}$/;
+
+if (passwordRegex.test(password.value)) {
+    console.log('Mot de passe correct');
+} else {
+    errorInput("Le mot de passe doit contenir au moins 8 caractères et inclure au moins un chiffre", errorPassword);
+}
+<p>
+
+
+    var mdp = ""; 
+    password.addEventListener("input", (e) => {
+     console.log("r")
+        console.log(mdp);
+        mdp = e.target.value; 
+    })
+    
+    
+    register.addEventListener("submit", (e) => {
+        e.preventDefault();
+        //Validation Mot de passe avec ReGex
+        function ValidateMPD(pass){
+        const regexPassword = new RegExp(/^(?=.*\d).{8,}$/);
+         return regexPassword.test(pass)
+        }
+
+        
+ if(ValidateMPD(mdp)) {
+     console.log('Mot de passe correct');
+ }else {
+     console.log('Le mot de passe doit contenir au moins 8 caractères et un chiffre');
+ }
+ }) 
+
+</p>
+
+</div>
+
+<!-- EXEMPLE TEST POUR LA PAGE DE CONNEXION -->
+<div class="connexion">
+        <h2>Connexion</h2>
+    <p>
+        <strong>TEST POUR CONNEXION DU SITE </strong> <br>
+        E-mail: martin.camille@gmail.com  <br>
+        Mot de passe: password123<br>
+    </p>
+   
+</div> 
+
+ <!--Apres le follow up  -->
+<p>Prendre les requetes et les mettre dans le javascript</p>
+
+
+<!-- Barre de recherche pour les utilisateur -->
+<div class="recherche">
+// //Requete pour la recherche
+$search = "SELECT * FROM user";
+
+//Condition de recherche pour la ville 
+if(!empty($_POST['city'])) {
+    $search = "AND city = :city";
+    $params[':city'] = $_POST['city']; 
+}
+
+//Condition de recherche pour l'âge
+if(!empty($_POST['sexe'])) {
+    $search = "AND gender = :sexe";
+    $params[':sexe'] = $_POST['sexe'];
+}
+
+//Condition de recherche pour les loisirs
+if(!empty($_POST['hobbies'])) {
+    $search = "AND hobbies = :hobbies";
+    $params[':hobbies'] = $_POST['hobbies'];
+}
+
+//Prepare la requete
+$research = $database->prepare($search);
+$research->execute($params); 
+$results =$search->fetchAll(PDO::FETCH_ASSOC);
+
+//Affiche les resultats
+foreach($results as $user){
+    echo $user['firstname'];
+}
+
+</div>
+</body>
+</html>
